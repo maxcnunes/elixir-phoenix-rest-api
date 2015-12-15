@@ -12,8 +12,5 @@ config :logger, level: :warn
 # Configure your database
 config :rest_api, RestApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "rest_api_test",
-  hostname: "localhost",
+  url: {:system, "DATABASE_URL"},
   pool: Ecto.Adapters.SQL.Sandbox

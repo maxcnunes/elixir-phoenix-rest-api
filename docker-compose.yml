@@ -1,21 +1,38 @@
+db: &DB
+  image: postgres:9.4.5
+  ports:
+    - 5432
+  environment:
+    POSTGRES_USER: user
+    POSTGRES_PASSWORD: password
+
+
+# Separate database for testing (since it gets deleted)
+dbTest:
+  <<: *DB
+
+
 local:
   build: .
+  command: sh -c "mix phoenix.server"
   ports:
     - 4000
-  environment:
+  environment: &ENV
     VIRTUAL_HOST: api.local.dockito.org
     VIRTUAL_PORT: 4000
     DATABASE_URL: ecto://user:password@db/rest_api_dev
   volumes:
       - ./:/usr/src/app
   links:
-    - postgres:db
+    - db:db
 
 
-postgres:
-  image: postgres:9.4.5
-  ports:
-    - '5432:5432'
+test:
+  build: .
+  command: sh -c "mix test"
   environment:
-    POSTGRES_USER: user
-    POSTGRES_PASSWORD: password
+    DATABASE_URL: ecto://user:password@db/rest_api_test
+  volumes:
+      - ./:/usr/src/app
+  links:
+    - dbTest:db

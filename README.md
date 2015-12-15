@@ -21,6 +21,12 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 
 ## Docker
 
+### Running the application
+
+```shell
+docker-compose run --rm local
+```
+
 ### Provisioning the Database
 
 ```shell
@@ -31,4 +37,10 @@ docker-compose run --rm local sh -c "mix ecto.create"
 
 ```shell
 docker-compose run --rm local sh -c "mix ecto.migrate"
+```
+
+### Running Tests
+
+```shell
+docker-compose run --rm test
 ```
