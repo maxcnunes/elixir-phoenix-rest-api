@@ -1,3 +1,17 @@
+local:
+  build: .
+  ports:
+    - 4000
+  environment:
+    VIRTUAL_HOST: api.local.dockito.org
+    VIRTUAL_PORT: 4000
+    DATABASE_URL: ecto://user:password@db/rest_api_dev
+  volumes:
+      - ./:/usr/src/app
+  links:
+    - postgres:db
+
+
 postgres:
   image: postgres:9.4.5
   ports:
