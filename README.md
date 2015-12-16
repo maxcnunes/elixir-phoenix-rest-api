@@ -1,4 +1,4 @@
-# RestApi
+# Elixir Phoenix Rest API
 
 
 ## Development
