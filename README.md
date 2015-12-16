@@ -1,13 +1,12 @@
 # Elixir Phoenix Rest API
 
-
-## Development
-
 Cloning this project:
 
 ```bash
 git clone git@github.com:maxcnunes/elixir-phoenix-rest-api.git rest_api
 ```
+
+## Development
 
 ### Running Locally
 
