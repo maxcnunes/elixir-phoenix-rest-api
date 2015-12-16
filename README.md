@@ -1,8 +1,15 @@
 # RestApi
 
+
 ## Development
 
-### Locally
+Cloning this project:
+
+```bash
+git clone git@github.com:maxcnunes/elixir-phoenix-rest-api.git rest_api
+```
+
+### Running Locally
 
 To start your Phoenix app:
 
@@ -13,7 +20,7 @@ To start your Phoenix app:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-### With Docker
+### Running With Docker
 
   1. Create and migrate your database with `docker-compose run --rm local sh -c "mix ecto.create && mix ecto.migrate`
   1. Start Phoenix endpoint with `docker-compose run --rm local`
@@ -24,13 +31,13 @@ Or in case your are using [dockito-proxy](https://github.com/dockito/proxy) api.
 
 ## Test
 
-### Locally
+### Testing Locally
 
 ```shell
 mix test
 ```
 
-### With Docker
+### Testing With Docker
 
 ```shell
 docker-compose run --rm test
