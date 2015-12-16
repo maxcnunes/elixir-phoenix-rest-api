@@ -54,8 +54,7 @@ curl -H "Content-Type: application/json" \
 
 **Delete**
 ```bash
-curl -H "Content-Type: application/json" \
-     -X DELETE \
+curl -X DELETE \
      http://api.local.dockito.org/posts/1
 ```
 
